@@ -54,14 +54,14 @@
         {% else %}
         <form class="form-dflex me-auto">
           <a href="{% url 'account_login' %}" class="btn btn-outline-secondary">Log in</a>
-          <a href="{% url 'account_signup' %}" class="btn btn-primary ml-2">Sign up</a>
+          <a href="{% url 'account_signup' %}" class="btn btn-outline-primary ml-2">Register</a>
         </form>
         {% endif %}
       </div>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container mt-4">
     {% block content %}
     <p>Default content...</p>
     {% endblock content %}
