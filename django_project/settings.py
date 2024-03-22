@@ -7,10 +7,10 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SECRET_KEY
-SECRET_KEY = "django-insecure-0peo@#x9jur3!h$ryje!$879xww8y1y66jx!%*#ymhg&jkozs2"
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["*"]
@@ -82,8 +82,9 @@ TEMPLATES = [
 #}
 
 # uses the DATABASE_URL environment variable to configure the database or defaults to a local sqlite database
+sqlite3 = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)
+    'default': dj_database_url.config(default=sqlite3, conn_max_age=600)
 }
 
 # For Docker/PostgreSQL usage uncomment this and comment the DATABASES config above
