@@ -99,6 +99,7 @@ $ docker-compose exec web python manage.py createsuperuser
 ## Next Steps
 
 - Add environment variables. There are multiple packages but I personally prefer [environs](https://pypi.org/project/environs/).
+  - Set `SECRET_KEY` to any [random set of characters](https://snippet.run/james/djsecret).
   - Set `DATABASE_URL` to use a Postgres database.
   - Set the following email environment variables for email:
 ```
