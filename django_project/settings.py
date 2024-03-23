@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = True
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["*"]
@@ -81,7 +81,7 @@ TEMPLATES = [
 #    }
 #}
 
-# uses the DATABASE_URL environment variable to configure the database or defaults to a local sqlite database
+# uses the DATABASE_URL environment variable or defaults to a local sqlite database
 sqlite3 = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {
     'default': dj_database_url.config(default=sqlite3, conn_max_age=600)

@@ -34,30 +34,31 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
-          {% if user.is_authenticated %}
+        </ul>
+        {% if user.is_authenticated %}
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Settings
             </a>
-            <ul class="dropdown-menu">
+            <!-- Apply dropdown-menu-end here to align the dropdown menu to the right -->
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="#">{{ user.email }}</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
+              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{% url 'account_change_password' %}">Change Password</a></li>
               <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign Out</a></li>
             </ul>
           </li>
         </ul>
         {% else %}
-        <form class="form-dflex me-auto">
-          <a href="{% url 'account_login' %}" class="btn btn-outline-secondary">Log In</a>
-          <a href="{% url 'account_signup' %}" class="btn btn-outline-primary ml-2">Register</a>
-        </form>
+        <div class="d-flex ms-auto">
+          <a href="{% url 'account_login' %}" class="btn btn-outline-secondary me-2">Log In</a>
+          <a href="{% url 'account_signup' %}" class="btn btn-outline-primary">Register</a>
+        </div>
         {% endif %}
       </div>
     </div>
-  </nav>
+  </nav>  
 
   <div class="container mt-4">
     {% block content %}
