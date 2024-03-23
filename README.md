@@ -1,7 +1,12 @@
 > A batteries-included Django starter project. To learn more visit [LearnDjango.com](https://learndjango.com).
 
-
 https://github.com/wsvincent/djangox/assets/766418/a73ea730-a7b4-4e53-bf51-aa68f6816d6a
+
+Modified by [James Flores](https://github.com/jamesflores):
+- Adds a Procfile and runtime.txt for Heroku
+- Include packages for Postgres
+- Reads email settings from environment variables
+- Adjustments to templates, e.g. login/register button on RH side
 
 
 ## 🚀 Features
@@ -94,6 +99,18 @@ $ docker-compose exec web python manage.py createsuperuser
 ## Next Steps
 
 - Add environment variables. There are multiple packages but I personally prefer [environs](https://pypi.org/project/environs/).
+  - Set `DATABASE_URL` to use a Postgres database.
+  - Set the following email environment variables for email:
+```
+EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend    
+EMAIL_HOST=smtp.mail.com
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=
+EMAIL_HOST_USER=user
+EMAIL_HOST_PASSWORD=pass
+DEFAULT_FROM_EMAIL=me@mail.com
+```
 - Add [gunicorn](https://pypi.org/project/gunicorn/) as the production web server.
 - Update the [EMAIL_BACKEND](https://docs.djangoproject.com/en/4.0/topics/email/#module-django.core.mail) and connect with a mail provider.
 - Make the [admin more secure](https://opensource.com/article/18/1/10-tips-making-django-admin-more-secure).
