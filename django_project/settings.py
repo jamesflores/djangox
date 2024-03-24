@@ -7,7 +7,7 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SECRET_KEY
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'oV2n2ALg94ZNRgDnnonA4ovmvc34xYcOBxJlJOFVO4c6dNYAux'  # os.environ.get('SECRET_KEY')
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = True
@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = "en-gb"
+LANGUAGE_CODE = "en-gb"  # default is "en-us"
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
 TIME_ZONE = "Australia/Sydney"  # default is UTC
