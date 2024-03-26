@@ -112,7 +112,8 @@ EMAIL_HOST_USER=user
 EMAIL_HOST_PASSWORD=pass
 DEFAULT_FROM_EMAIL=me@mail.com
 ```
-- Add [gunicorn](https://pypi.org/project/gunicorn/) as the production web server.
+- Using Django Admin, edit the default `Site` model with your application details.
+- ~Add [gunicorn](https://pypi.org/project/gunicorn/) as the production web server.~
 - Update the [EMAIL_BACKEND](https://docs.djangoproject.com/en/4.0/topics/email/#module-django.core.mail) and connect with a mail provider.
 - Make the [admin more secure](https://opensource.com/article/18/1/10-tips-making-django-admin-more-secure).
 - `django-allauth` supports [social authentication](https://django-allauth.readthedocs.io/en/latest/providers.html) if you need that.
